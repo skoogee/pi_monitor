@@ -1,8 +1,8 @@
-# Pi Monitor
+# Ubuntu Pihole Monitor
 
-Python utility to get Raspberry Pi metrics. This is an experimental utility, use at your own risk :)
+Python utility to get Ubuntu metrics. This is an experimental utility, use at your own risk :)
 
-This is just a very simple Python script using a http server to provide some Raspberry Pi metrics via REST calls, like temperature, load average and more.
+This is just a very simple Python script using a http server to provide some ubuntu metrics via REST calls, like temperature, load average and more.
 
 ## Usage
 
@@ -27,30 +27,30 @@ The server will make a single endpoint available on the default port `8088`:
 
 ### Automatic
 
-`wget -O - https://raw.githubusercontent.com/Bunn/pi_monitor/master/install.sh | sudo bash`
+`wget -O - https://raw.githubusercontent.com/skoogee/pi_monitor/master/install.sh | sudo bash`
 
 ### Manual
 
-You can download the files manually and run it the way you like. If you don't want Pi Monitor to run as a service you can just run as `python3 pi_monitor.py`
+You can download the files manually and run it the way you like. If you don't want Pi Monitor to run as a service you can just run as `python3 ubuntu-pihole_monitor.py`
 
 ## Configuration
 
-If you're running it using the automatic installation you can change the username and default port in which Pi Monitor is running by changing the following settings on your `pi-monitor.service`
+If you're running it using the automatic installation you can change the username and default port in which Ubuntu Pihole Monitor is running by changing the following settings on your `ubuntu-pihole-monitor.service`
 
 ```
 [Service]
-ExecStart=/usr/bin/python3 -u /usr/local/bin/pi-monitor.py 8088
-User=pi
+ExecStart=/usr/bin/python3 -u /usr/local/bin/ubuntu-pihole-monitor.py 8088
+User=root
 ```
 
 Before doing so, make sure to stop the service with
-`sudo systemctl stop pi-monitor.service`
+`sudo systemctl stop ubuntu-pihole-monitor.service`
 and then start it again after your changes with
-`sudo systemctl start pi-monitor.service`
+`sudo systemctl start ubuntu-pihole-monitor.service`
 
 If you're running it manually you can just change the default port by sending it as a parameter like:
-`python3 pi_monitor.py 8181`
+`python3 ubuntu-pihole-monitor.py 8181`
 
 ## Compatibility
 
-This was tested on Raspberry Pi OS (32 bit), kernel 5.4.51-v7+
+This was tested on Ubuntu Server 20.04 LTS OS (64 bit), kernel 5.4.0-59-generic
