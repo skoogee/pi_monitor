@@ -3,20 +3,18 @@ import re
 import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import sys
+import os
 
+#load the msr driver - provides interface to read CPU registers 
+os.system("modprobe msr")
 
 class Monitor:
 
-    def get_thermal_temperature(self):
-        thermal = subprocess.check_output(
-            "cat /sys/class/thermal/thermal_zone0/temp", shell=True).decode("utf8")
-        return float(thermal) / 1000.0
-
-    # returns the temperature of the SoC as measured by the on-board temperature sensor
+    # returns the temperature of the SoC as measured by the on-board temperature sensor using msr register
     def get_soc_temperature(self):
         temp = subprocess.check_output(
-            "vcgencmd measure_temp", shell=True).decode("utf8")
-        return float(re.findall(r'\d+\.\d+', temp)[0])
+            "sudo rdmsr --bitfield 22:16 -u 0x1B1", shell=True).decode("utf8")
+        return float(temp)
 
     # uptime in seconds
     def get_uptime(self):
