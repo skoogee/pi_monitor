@@ -1,5 +1,7 @@
 # Ubuntu Pihole Monitor
 
+""This utility was forked and modifed to enable monitoring of a Pihole server installated on Ubuntu, Thus connecting properly with Pi Stats App for IOS.""
+
 Python utility to get Ubuntu metrics. This is an experimental utility, use at your own risk :)
 
 This is just a very simple Python script using a http server to provide some ubuntu metrics via REST calls, like temperature, load average and more.
