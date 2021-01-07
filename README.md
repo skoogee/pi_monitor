@@ -27,7 +27,7 @@ The server will make a single endpoint available on the default port `8088`:
 
 ### Automatic
 
-`wget -O - https://raw.githubusercontent.com/skoogee/pi_monitor/master/install.sh | sudo bash`
+`wget -O - https://raw.githubusercontent.com/skoogee/ubuntu_pihole_monitor/master/install.sh | sudo bash`
 
 ### Manual
 
