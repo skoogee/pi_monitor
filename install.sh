@@ -5,8 +5,8 @@ echo ""
 
 echo "Downloading files..."
 
-wget https://raw.githubusercontent.com/skoogee/pi_monitor/master/ubuntu-pihole-monitor.py
-wget https://raw.githubusercontent.com/skoogee/pi_monitor/master/ubuntu-pihole-monitor.service
+wget https://raw.githubusercontent.com/skoogee/ubuntu_pihole_monitor/master/ubuntu-pihole-monitor.py
+wget https://raw.githubusercontent.com/skoogee/ubuntu_pihole_monitor/master/ubuntu-pihole-monitor.service
 
 echo ""
 
