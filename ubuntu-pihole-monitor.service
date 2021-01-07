@@ -1,0 +1,11 @@
+[Unit]
+Description=Ubuntu Pihole Monitor
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 -u /usr/local/bin/ubuntu-pihole-monitor.py 8088
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
